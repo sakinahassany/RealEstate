@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<meta name="author" content="Ralph Phillips">
+        <link rel="stylesheet" media="screen" href="assets/css/style.css" />
+		<script type="text/javascript">
+function reset(){
+  document.getElementById("fname").value="";
+  document.getElementById("mname").value="";
+  document.getElementById("lname").value="";
+  document.getElementById("email").value="";
+  document.getElementById("conemail").value="";
+  document.getElementById("phone").value="";
+  document.getElementById("user_name").value="";
+  document.getElementById("pass").value="";
+  document.getElementById("repass").value="";
+}
+
+    function validateForm()
+    {
+        var fn =document.getElementById("fname").value;
+		var mn =document.getElementById("mname").value;
+        var ln =document.getElementById("lname").value;
+        var e =document.getElementById("email").value;
+		var cone =document.getElementById("conemail").value;
+        var ph =document.getElementById("phone").value;
+		var u =document.getElementById("user_name").value;
+        var p =document.getElementById("pass").value;
+        var rp =document.getElementById("repass").value;
+		var letter = /^[a-zA-Z]+$/;
+		var pas =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$/;   //  numric n special char 
+		if(fn == null || fn ==""   ){
+		alert(" First Name is required");
+            return false;
+		}
+		if(mn == null || mn ==""   ){
+		alert(" Middle Name is required");
+            return false;
+		}
+		if(ln == null || ln ==""){
+		alert(" Last Name is required");
+            return false;
+		}
+		if(e == null || e ==""){
+		alert(" Email is required");
+            return false;
+		}
+		if(cone == null || cone ==""){
+		alert(" Confirm Email");
+            return false;
+		}
+		if(Form.email.value !="" && Form.email.value != Form.conemail.value){
+		alert("Email Confirmation does not match ");
+		return false;
+		}
+		if(ph == null || ph ==""){
+		alert(" Phone is required");
+            return false;
+		}
+		if(u == null || u =="" ){
+		alert(" User name is required");
+            return false;
+		}
+		
+		if(p == null || p ==""){
+		alert(" Password is required");
+            return false;
+		}
+		if(rp == null || rp =="" ){
+		alert(" Please Confirm the Password");
+            return false;
+		}
+		if(!Form.pass.value.match(pas)){
+		alert("Please Match Requirments");
+		return false;
+		}
+		if(Form.pass.value !="" && Form.pass.value != Form.repass.value){
+		alert("Password confirmation does not match");
+		return false;
+		}
+		if((Form.gender[0].checked == false ) && (Form.gender[1].checked == false)){
+            alert("Please choose your Gender: Male or Female");
+			return false;
+		}
+		if(document.getElementById("CheBox").checked == false){
+        //var ch =document.getElementById("CheBox").value;
+		alert(" Please Read & Check");
+            return false;
+		}		
+    }
+	</script>
+ <style>
+* {
+		margin: 0px;
+		padding: 0px;}
+body {
+		//background-color: #285955;
+}
+div.bg{
+    background-image: url("light-blue-.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;}
+h1#hd {
+		text-align: center;
+        height: 35px;}
+p#tr1{
+		text-align: center;
+		margin-top: 5px;}
+hr#hr1{
+    background-color: #040475;
+    border: solid 4px white;
+    height: 1px ;
+    margin: 0;
+	padding: 0;}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+	font-weight:bold;
+	font-size: large;
+	font-style: normal;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+}
+.dropdown-content a {
+    color: black;
+    padding: 4px 6px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #dbd4d4}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}  
+input[type=text]{
+	height: 35px;
+	width: 320px;
+	border: #0e5ece 1px solid;
+	border-radius: 3px;}
+input[type=password]{
+	height: 35px;
+	width: 320px;
+	border: #0e5ece 1px solid;
+	border-radius: 3px;}
+input[type=email]{
+	height: 35px;
+	width: 320px;
+	border: #0e5ece 1px solid;
+	border-radius: 3px;}
+	
+.button1  {
+	padding: 7px 25px;
+	background-color: #3399ff;
+	color: black;
+	cursor: pointer;
+	border: 1px solid #003366;
+	border-radius: 10px;
+    font-size: 17px;}
+
+#wrap{
+	width: 1px;
+}	
+.left{
+	height: 380px;
+	margin-top: 15px;
+	float: left;
+	position:relative;
+	margin-left: 1%;
+	
+}
+.right{
+	height: auto;
+	margin-top: 20px;
+	//float: right;
+	width: auto;
+	position:relative;
+	//margin-right: 6%;
+	text-align: center;
+}
+.divaccount{
+	float: right;
+	//margin-right: 2%;
+}
+ul#ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3399ff;
+	border-radius: 10px;
+	border: 1px solid #003366;
+}
+li a:hover, .dropaccount:hover .drop_conaccount {
+    background-color: red;
+	border-radius: 30px;
+}
+li a, .drop_conaccount{
+    display: inline-block;
+    text-align: center;
+    padding: 5px 20px;
+    text-decoration: none;
+	font-weight:bold;
+}
+a#fontcolor {
+     color: black;
+}
+li.dropaccount {
+    display: inline-block;
+}
+.drop_ulaccount {
+    display: none;
+    position: absolute;
+    background-color: white;
+    //min-width: 160px;
+}
+.drop_ulaccount a {
+    color: black;
+    padding: 4px 6px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.drop_ulaccount a:hover {
+	background-color: #3399ff}
+
+.dropaccount:hover .drop_ulaccount {
+    display: block;
+} 
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 6%;
+   background-image: url("b1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   text-align: center;
+}
+
+.error {color: #FF0000;}
+    </style>
+
+</head>
+<body>
+<div class="bg">
+<h1 id='hd'>LandProperty.com.my</h1><p id="tr1">Find Land for buying and sale</p></div>
+<hr id='hr1'>
+<div class='pag'>
+<ul>
+<li><a href="home.php">Home</a></li>
+<li><a href="buying.html">Buying</a></li>
+<li><a href="sell.html">Sell</a></li>
+<li><a href="waqf.html">Waqf</a></li>
+<li><a href="advertise.html">Advertising</a></li>
+<li><a href="report.html">Reporting</a></li>
+<li class="dropdown"><a href="#" class="dropbtn">Contact</a>
+	<ul class="dropdown-content">
+	<li><a href="servise.html">Servise</a></li>
+        <li><a href="contact.html">Address</a></li>
+        <li><a href="feedback.html">Feedback</a></li></ul></li>
+</ul></div>
+<div class="divaccount">
+<ul id="ul">
+<li class="dropaccount"><a href="#" id="fontcolor"class="drop_conaccount"><span>Account</span></a>
+<ul class="drop_ulaccount">
+	<li><a href="login.php">Login</a></li>
+        <li><a href="loginadvertise.php">Advertise Login </a></li>
+        <li><a href="signup.html">Sign Up</a></li></ul></li></ul></ul></div>
+<div class="left">
+<form id="test" action="membersignup.php" method="post" name="Form" onsubmit="return validateForm()" >
+</br>
+<table border="0" width="455" height="500" bgcolor="white">
+<tr><td colspan="5" align="center" bgcolor="#80b3ff"><h1>Please fill up the form</h1></td></tr>
+<tr><td>First Name:</td><td><input type="text" id="fname" name="fname" pattern="[a-zA-Z]{4,15}" title="First name should only contain lowercase or upercase letters. e.g. john/John and it should be more than 3 letters"></td></tr>
+<tr><td>Middle Name:</td><td><input type="text" id="mname" name="mname" pattern="[a-zA-Z]{4,15}" title="Middle name should only contain lowercase or upercase letters. e.g. john/John and it should be more than 3 letters"></td></tr>
+<tr><td>Last Name:</td><td><input type="text" id="lname" name="lname" pattern="[a-zA-Z]{4,15}" title="Last name should only contain lowercase or upercase letters. e.g. john/John and it should be more than 3 letters"></td></tr>
+
+<tr><td>Email Address:</td><td><input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please add proper email. e.g. john@gmail.com"></td></tr>
+
+<tr><td>Confirm Email:</td><td><input type="email" id="conemail" name="conemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please add proper email. e.g. john@gmail.com"></td></tr>
+
+<tr><td>Phone Number:</td><td><input type="text" id="phone"  name="phone" pattern="^\d{4}\d{2}\d{4}\d{3}$"></td></tr>
+
+<tr><td>User Name:</td><td><input type="text" id="user_name" name="user_name" pattern="[a-z][a-z0-9-_.]{3,20}"></td></tr>
+
+<tr><td>Password:</td><td><input type="password" id="pass" name="pass"></td></tr>
+
+<tr><td>Confirm Password:</td><td><input type="password" id="repass" name="repass"></td></tr>
+
+<tr><td colspan="5" align="center">
+<input type="radio" name="gender" id="male"> Male
+<input type="radio" name="gender" id="female"> Female</td></tr>
+  
+<tr><td colspan="5" align="center"><input id="CheBox" type="checkbox">
+I agree to the terms & Conditions and Privacy Policy of<br>
+LandStart.com Malaysia.</td></tr>
+<tr>
+<td colspan="5" align="center"><button class="button button1" name="submit" ><b>Create New Account</button>
+<button class="button button1" name="submit" onclick="reset()"  >Clear</b></button></td></tr>
+</table>
+</form>
+</div>
+<br><br><br><br><br><br>
+<div class="right">
+<p>&nbsp;TEST Please fill up the form Please fill up the formPlease fill up the form</p>
+</div>
+<br><br>
+</body>
+<div class="footer">
+  <p>Footer</p>
+  <i style="font-size:24px" class="fa">&#xf08c;</i>
+</div>
+</html>

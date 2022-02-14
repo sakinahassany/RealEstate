@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<meta name="author" content="Ralph Phillips">
+        <link rel="stylesheet" media="screen" href="assets/css/style.css" />
+		<script type="text/javascript">
+function reset(){
+  document.getElementById("fname").value="";
+  document.getElementById("lname").value="";
+   document.getElementById("email").value="";
+  document.getElementById("phone").value="";
+   document.getElementById("user_name").value="";
+  document.getElementById("pass").value="";
+   document.getElementById("repass").value="";
+}
+
+    function validateForm()
+    {
+        var fn =document.getElementById("fname").value;
+		var mn =document.getElementById("mname").value;
+        var ln =document.getElementById("lname").value;
+        var e =document.getElementById("email").value;
+        var ph =document.getElementById("phone").value;
+		var u =document.getElementById("user_name").value;
+        var p =document.getElementById("pass").value;
+        var rp =document.getElementById("repass").value;
+		var letter = /^[a-zA-Z]+$/;
+		var pas =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$/;   //  numric n special char 
+		if(fn == null || fn ==""   ){
+		alert(" First Name is required");
+            return false;
+		}
+		if(mn == null || mn ==""   ){
+		alert(" Middle Name is required");
+            return false;
+		}
+		if(ln == null || ln ==""){
+		alert(" Last Name is required");
+            return false;
+		}
+		if(e == null || e ==""){
+		alert(" Email is required");
+            return false;
+		}
+		if(ph == null || ph ==""){
+		alert(" Phone is required");
+            return false;
+		}
+		if(u == null || u =="" ){
+		alert(" User name is required");
+            return false;
+		}
+		
+		if(p == null || p ==""){
+		alert(" Password is required");
+            return false;
+		}
+		if(rp == null || rp =="" ){
+		alert(" Please Confirm the Password");
+            return false;
+		}
+		if(!Form.pass.value.match(pas)){
+		alert("Please Match Requirments");
+		return false;
+		}
+		if(Form.pass.value !="" && Form.pass.value != Form.repass.value){
+		alert("Please");
+		return false;
+		}
+		if(document.getElementById("CheBox").checked){
+        //var ch =document.getElementById("CheBox").value;
+            return true;
+		}
+		else{
+		alert(" Please Read & Check");
+		return false;
+		}
+		if(document.getElementById("gender").checked){
+        //var ch =document.getElementById("gender").value;
+            return true;
+		}
+		else{
+		alert(" Please check your gender");
+		return false;
+		}
+							 	 	
+    }
+	
+	</script>
+ <style>
+* {
+		margin: 0px;
+		padding: 0px;}
+body {
+		//background-color: #285955;
+}
+div.bg{
+    background-image: url("light-blue-.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;}
+h1#hd {
+		text-align: center;
+        height: 35px;}
+p#tr1{
+		text-align: center;
+		margin-top: 5px;}
+hr#hr1{
+    background-color: #040475;
+    border: solid 4px white;
+    height: 1px ;
+    margin: 0;
+	padding: 0;}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+	font-weight:bold;
+}
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+}
+.dropdown-content a {
+    color: black;
+    padding: 4px 6px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #dbd4d4}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*input[type=text]{
+	height: 30px;
+	width: 320px;
+	border: gery 1px solid;
+	border-radius: auto;}
+input[type=password]{
+	height: 30px;
+	width: 320px;
+	border: gery 1px solid;
+	border-radius: auto}
+input[type=email]{
+	height: 30px;
+	width: 320px;
+	border: gery 1px solid;
+	border-radius: auto;}*/
+	
+input[type=text]{
+	height: 25px;
+	border: gery 1px solid;
+	border-radius: auto;}
+input[type=email]{
+	height: 25px;
+	border: gery 1px solid;
+	border-radius: auto;}
+input[type=password]{
+	height: 25px;
+	border: gery 1px solid;
+	border-radius: auto}
+	
+.button1  {
+	padding: 10px 30px;
+	background-color: #60104a;
+	border: 0;
+	color: #FFF;
+	cursor: pointer;
+	border-radius: 4px;
+    font-size: 17px;}
+
+.clearfix::after {
+    contact: "";
+    clear: both;
+    display: table;
+}
+.column{
+	margin-top: 30px;
+	float: left;
+	//padding: 6.9px;
+}
+.menu {
+    width: 30%;
+	//border: 1px solid black;
+}
+.content{
+	width: 68%;
+	border: 1px solid black;
+}
+.register{
+	position: fixed;
+	margin-left: 30px;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 6%;
+   background-image: url("b1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   text-align: center;
+}
+
+.error {color: #FF0000;}
+    </style>
+
+</head>
+<body>
+<div class="bg">
+<h1 id='hd'>LandProperty.com.my</h1><p id="tr1">Find Land for buying and sale</p></div>
+<hr id='hr1'>
+<div class='pag'>
+<ul>
+<li><a href="home.php">Home</a></li>
+<li><a href="buying.html">Buying</a></li>
+<li><a href="sell.html">Sell</a></li>
+<li><a href="waqf.html">Waqf</a></li>
+<li><a href="advertise.html">Advertising</a></li>
+<li><a href="report.html">Reporting</a></li>
+<li class="dropdown"><a href="#" class="dropbtn">Contact</a>
+	<ul class="dropdown-content">
+	<li><a href="servise.html">Servise</a></li>
+        <li><a href="contact.html">Address</a></li>
+        <li><a href="feedback.html">Feedback</a></li></ul></li>
+</ul></div>
+<div class="clearfix">
+<div class="column menu" >
+
+<div class="column content">
+<form id="test" action="membersignup.php" method="post" name="Form" onsubmit="return validateForm()" >
+<br><center><h1>Please fill up the form</h1> </center><br><b>
+
+First Name:<input type="text" id="fname" name="fname" maxlength="20" size="20" pattern="[a-zA-Z]{3,15}">
+Middle Name:<input type="text" id="mname" name="mname" maxlength="20" size="20" pattern="[a-zA-Z]{3,15}">
+Last Name:<input type="text" id="lname" name="lname" maxlength="20" size="20" pattern="[a-zA-Z]{3,15}"><br><br>
+Phone Number:<input type="text" id="phone"  name="phone" maxlength="20" size="20" pattern="^\d{4}\d{2}\d{4}\d{3}$">
+User Name:<input type="text" id="user_name" name="user_name" maxlength="20" size="20" pattern="[a-z][a-z0-9-_.]{3,20}">
+<input type="radio" name="gender" id="gender" value="male" > Male
+  <input type="radio" name="gender" id="gender" value="female"> Female
+<br><br>
+
+Email Address:<input type="email" id="email" name="email" size=35 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+Confrim Email:<input type="email" id="email" name="email" size=35 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"><br><br>
+Password:<input type="password" id="pass" name="pass" maxlength="20" size="20">
+Confrim Password:<input type="password" id="repass" name="repass" maxlength="20" size="20"><br>
+<input id="CheBox" type="checkbox"><br> </b>
+I agree to the terms & Conditions and Privacy Policy of<br>
+LandStart.com Malaysia.
+<button class="button button1" name="submit" >Create New Account</button>
+<button class="button button1" name="submit" onclick="reset()"  >Clear</button>
+</div>
+</form>
+</div>
+</div>
+<br><br>
+</body>
+</div>
+<div class="footer">
+  <p>Footer</p>
+  <i style="font-size:24px" class="fa">&#xf08c;</i>
+</div>
+</html>
